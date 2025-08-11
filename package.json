@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-responsive",
+  "version": "1.0.0",
+  "description": "Portfolio contact endpoint",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"No tests\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.8"
+  }
+}
