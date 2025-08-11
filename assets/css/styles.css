@@ -10,6 +10,8 @@
   --hue-color: 224;
   --first-color: hsl(var(--hue-color), 89%, 60%);
   --second-color: hsl(var(--hue-color), 56%, 12%);
+  --body-color: #fff;
+  --text-color: hsl(var(--hue-color), 56%, 12%);
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -47,7 +49,13 @@ body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  color: var(--second-color);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+body.dark-theme {
+  --body-color: hsl(var(--hue-color), 28%, 12%);
+  --text-color: hsl(var(--hue-color), 8%, 95%);
 }
 
 h1, h2, p {
@@ -110,7 +118,7 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #fff;
+  background-color: var(--body-color);
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 
@@ -154,12 +162,28 @@ img {
   background-color: var(--first-color);
 }
 .nav__logo {
-  color: var(--second-color);
+  color: var(--text-color);
 }
 .nav__toggle {
-  color: var(--second-color);
+  color: var(--text-color);
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.nav__btns {
+  display: flex;
+  align-items: center;
+}
+
+.change-theme {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-right: var(--mb-2);
+  cursor: pointer;
+}
+
+.change-theme:hover {
+  color: var(--first-color);
 }
 
 /*Active menu*/
@@ -202,7 +226,7 @@ img {
   width: max-content;
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
-  color: var(--second-color);
+  color: var(--text-color);
 }
 .home__social-icon:hover {
   color: var(--first-color);
@@ -329,7 +353,8 @@ img {
   font-weight: var(--font-semi);
   padding: 1rem;
   border-radius: 0.5rem;
-  border: 1.5px solid var(--second-color);
+  border: 1.5px solid var(--text-color);
+  color: var(--text-color);
   outline: none;
   margin-bottom: var(--mb-4);
 }
@@ -446,7 +471,7 @@ img {
     display: none;
   }
   .nav__link {
-    color: var(--second-color);
+    color: var(--text-color);
   }
   .home {
     padding: 8rem 0 2rem;
