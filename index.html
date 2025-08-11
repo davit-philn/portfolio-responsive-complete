@@ -147,27 +147,43 @@
             <section class="work section" id="work">
                 <h2 class="section-title">Work</h2>
 
+                <div class="work__filters">
+                    <span class="work__filter active" data-filter="all">All</span>
+                    <span class="work__filter" data-filter="web">Web</span>
+                    <span class="work__filter" data-filter="mobile">Mobile</span>
+                    <span class="work__filter" data-filter="design">Design</span>
+                </div>
+
                 <div class="work__container bd-grid">
-                    <a href="" class="work__img">
+                    <a href="#" class="work__img" data-category="web" data-description="Responsive web project" data-link="https://example.com/project1">
                         <img src="assets/img/work1.jpg" alt="">
                     </a>
-                    <a href="" class="work__img">
+                    <a href="#" class="work__img" data-category="mobile" data-description="Mobile app concept" data-link="https://example.com/project2">
                         <img src="assets/img/work2.jpg" alt="">
                     </a>
-                    <a href="" class="work__img">
+                    <a href="#" class="work__img" data-category="web" data-description="Landing page design" data-link="https://example.com/project3">
                         <img src="assets/img/work3.jpg" alt="">
                     </a>
-                    <a href="" class="work__img">
+                    <a href="#" class="work__img" data-category="design" data-description="Branding illustration" data-link="https://example.com/project4">
                         <img src="assets/img/work4.jpg" alt="">
                     </a>
-                    <a href="" class="work__img">
+                    <a href="#" class="work__img" data-category="mobile" data-description="Mobile UI kit" data-link="https://example.com/project5">
                         <img src="assets/img/work5.jpg" alt="">
                     </a>
-                    <a href="" class="work__img">
+                    <a href="#" class="work__img" data-category="web" data-description="Dashboard web app" data-link="https://example.com/project6">
                         <img src="assets/img/work6.jpg" alt="">
                     </a>
                 </div>
             </section>
+
+            <div id="work-modal" class="work-modal">
+                <div class="work-modal__content">
+                    <span class="work-modal__close">&times;</span>
+                    <img src="" alt="" class="work-modal__img">
+                    <p class="work-modal__description"></p>
+                    <a href="#" target="_blank" class="work-modal__link">Visit project</a>
+                </div>
+            </div>
 
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
