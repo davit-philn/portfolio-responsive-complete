@@ -54,4 +54,47 @@ const sr = ScrollReveal({
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
+
+/*==================== WORK FILTERS ====================*/
+const filterBtns = document.querySelectorAll('.work__filter');
+const workImgs = document.querySelectorAll('.work__img');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelector('.work__filter.active').classList.remove('active');
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        workImgs.forEach(img => {
+            const category = img.getAttribute('data-category');
+            if(filter === 'all' || category === filter){
+                img.style.display = '';
+            }else{
+                img.style.display = 'none';
+            }
+        });
+    });
+});
+
+/*==================== WORK MODAL ====================*/
+const modal = document.getElementById('work-modal');
+const modalImg = modal.querySelector('.work-modal__img');
+const modalDesc = modal.querySelector('.work-modal__description');
+const modalLink = modal.querySelector('.work-modal__link');
+
+workImgs.forEach(img => {
+    img.addEventListener('click', e => {
+        e.preventDefault();
+        modalImg.src = img.querySelector('img').src;
+        modalDesc.textContent = img.getAttribute('data-description');
+        modalLink.href = img.getAttribute('data-link');
+        modal.classList.add('show');
+    });
+});
+
+modal.addEventListener('click', e => {
+    if(e.target.classList.contains('work-modal__close') || e.target === modal){
+        modal.classList.remove('show');
+    }
+});
